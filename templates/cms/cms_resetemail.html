@@ -1,0 +1,29 @@
+{% extends 'cms/base.html' %}
+{% from 'common/_macros.html' import static %}
+{% block title %}修改郵箱{% endblock %}
+{% block page_title %}{{ self.title() }}{% endblock %}
+{% block head %}
+    <script src="{{ static('cms/js/email_capture.js') }}"></script>
+    <style>
+        .form-group {
+            padding-top: 5px;
+        }
+    </style>
+{% endblock %}
+{% block main %}
+    <form class="form-inline">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" name="email" placeholder="請輸入新郵箱">
+            </div>
+        </div>
+        <button style="cursor: pointer" type="submit" id="email" class="btn btn-primary">獲取驗證碼</button>
+                {#  小手      #}
+    </form>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="password" class="form-control" name="newpwd2" placeholder="請確認新密碼">
+        </div>
+    </div>
+    <button id="submit" type="submit" class="btn btn-primary">確認修改</button>
+{% endblock %}

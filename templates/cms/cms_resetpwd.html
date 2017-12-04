@@ -1,0 +1,35 @@
+{% extends 'cms/base.html' %}
+{% from 'common/_macros.html' import static %}
+{% block title %}修改密碼{% endblock %}
+{% block page_title %}{{ self.title() }}{% endblock %}
+{% block head %}
+    <style>
+        .form-container {
+            width: 300px;
+        }
+    </style>
+    <script src="{{ static('cms/js/resetpwd.js') }}"></script>
+{% endblock %}
+{% block main %}
+    <div class="form-container">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">原密碼</div>
+                <input type="password" class="form-control" name="oldpwd" placeholder="請輸入原密碼">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">新密碼密碼</div>
+                <input type="password" class="form-control" name="newpwd" placeholder="請輸入新密碼">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">確認密碼</div>
+                <input type="password" class="form-control" name="newpwd2" placeholder="請確認新密碼">
+            </div>
+        </div>
+        <button id="submit" type="submit" class="btn btn-primary">確認修改</button>
+    </div>
+{% endblock %}
